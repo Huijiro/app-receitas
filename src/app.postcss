@@ -1,0 +1,37 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+	@apply h-full overflow-hidden;
+}
+
+@font-face {
+	/* Reference name */
+	font-family: 'Inter';
+	/* For multiple files use commas, ex: url(), url(), ... */
+	src: url('/fonts/Inter.ttf');
+}
+
+:root [data-theme='vintage'] {
+	--theme-font-family-base: 'Inter', sans-serif;
+	--theme-font-family-heading: 'Inter', sans-serif;
+}
+
+.gradient-heading {
+	@apply bg-clip-text text-transparent box-decoration-clone;
+	/* Direction */
+	@apply bg-gradient-to-br;
+	/* Color Stops */
+	@apply from-primary-700 to-primary-900;
+}
+
+.gradient-heading-dark {
+	@apply bg-clip-text text-transparent box-decoration-clone;
+	/* Direction */
+	@apply bg-gradient-to-br;
+	/* Color Stops */
+	@apply from-primary-200 to-primary-300;
+}
