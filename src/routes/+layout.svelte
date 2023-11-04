@@ -17,6 +17,11 @@
 	initializeStores();
 </script>
 
+<svelte:head>
+	<title>Recipe App</title>
+	<meta property="description" content="Recipe App made by Huijiro" />
+</svelte:head>
+
 <AppShell>
 	<svelte:fragment slot="header">
 		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">

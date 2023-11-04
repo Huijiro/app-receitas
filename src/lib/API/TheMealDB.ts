@@ -75,7 +75,7 @@ interface FormatedMeal {
 }
 
 interface APIResponse {
-	meals: Meal[] | null;
+	meals: Meal[];
 }
 
 const formatMeal = (meal: Meal): FormatedMeal => {
@@ -111,15 +111,21 @@ async function SearchByName(name: string): Promise<FormatedMeal[]> {
 	return data.meals?.map(formatMeal) ?? [];
 }
 
-async function SearchById(id: string): Promise<FormatedMeal | undefined> {
+async function SearchById(id: string): Promise<FormatedMeal> {
 	const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
 	const data: APIResponse = await response.json();
 
 	return data.meals?.map(formatMeal)[0];
 }
 
-async function SearchRandom(): Promise<FormatedMeal | undefined> {
+async function SearchRandom(): Promise<FormatedMeal> {
 	const response = await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`);
+
+	if (!response.ok) {
+		console.error(response);
+		throw new Error('Failed to fetch random meal');
+	}
+
 	const data: APIResponse = await response.json();
 
 	return data.meals?.map(formatMeal)[0];

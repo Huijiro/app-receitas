@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import type { FormatedMeal } from '$lib/API/TheMealDB';
 
 	export let meal: FormatedMeal;
@@ -7,7 +6,7 @@
 
 <a class="card card-hover lg:w-64 cursor-pointer" href={`/meal/${meal.id}`}>
 	<header class="card-header">
-		<img src={meal.image} alt={meal.name} />
+		<img class="w-64 aspect-square" src={meal.image} alt={meal.name} />
 	</header>
 	<section class="p-4">
 		<h6>{meal.area}</h6>
