@@ -6,7 +6,7 @@
 	let search: string = '';
 </script>
 
-<div class="input-group input-group-divider grid-cols-[auto_1fr_auto]">
+<div class="hidden lg:grid input-group input-group-divider grid-cols-[auto_1fr_auto]">
 	<input
 		bind:value={search}
 		type="text"
