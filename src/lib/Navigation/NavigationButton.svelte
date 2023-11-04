@@ -4,7 +4,11 @@
 	const navigationStore = getDrawerStore();
 </script>
 
-<button class="btn btn-sm" on:click={() => navigationStore.open()}>
+<button
+	aria-label="Navigation Hamburguer Button"
+	class="btn btn-sm"
+	on:click={() => navigationStore.open()}
+>
 	<span>
 		<svg viewBox="0 0 100 80" class="fill-token w-8 h-8">
 			<rect width="100" height="20" />
